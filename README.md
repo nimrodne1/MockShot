@@ -7,6 +7,28 @@ MockShot analyzes any job description and generates tailored interview questions
 
 ---
 
+## Screenshots
+
+### Landing Page
+![Landing](screenshots/landing-desktop.png)
+
+### Interview Screen
+![Interview](screenshots/interview-desktop.png)
+
+### Results
+![Results](screenshots/results-desktop.png)
+
+<details>
+<summary>Mobile screenshots</summary>
+
+| Landing | Interview | Results |
+|---------|-----------|---------|
+| ![](screenshots/landing-mobile.png) | ![](screenshots/interview-mobile.png) | ![](screenshots/results-mobile.png) |
+
+</details>
+
+---
+
 ## Features
 
 - Paste any job description → get 5 tailored interview questions (2 technical, 2 behavioral, 1 motivation)
@@ -34,7 +56,7 @@ MockShot analyzes any job description and generates tailored interview questions
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/your-username/mockshot.git
+   git clone https://github.com/nimrodne1/MockShot.git
    cd mockshot
    ```
 
