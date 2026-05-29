@@ -38,6 +38,7 @@ async function analyzeJobDescription(req, res) {
       contents: `Analyze this job description and generate the 5 interview questions:\n\n${jobDescription.trim()}`,
       config: {
         systemInstruction: SYSTEM_PROMPT,
+        thinkingConfig: { thinkingBudget: 0 },
       },
     });
     rawText = response.text;

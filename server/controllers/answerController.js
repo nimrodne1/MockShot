@@ -63,7 +63,10 @@ async function evaluateAnswer(req, res) {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: userPrompt,
-      config: { systemInstruction: SYSTEM_PROMPT },
+      config: {
+        systemInstruction: SYSTEM_PROMPT,
+        thinkingConfig: { thinkingBudget: 0 },
+      },
     });
     rawText = response.text;
   } catch (err) {
