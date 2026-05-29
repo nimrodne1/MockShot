@@ -43,8 +43,8 @@ async function analyzeJobDescription(req, res) {
     });
     rawText = response.text;
   } catch (err) {
-    console.error('Gemini API error:', err.message);
-    return res.status(502).json({ error: 'Failed to contact AI service' });
+    console.error('Gemini API error:', err.message, err.status, JSON.stringify(err.errorDetails));
+    return res.status(502).json({ error: 'Failed to contact AI service', detail: err.message });
   }
 
   // Strip markdown code fences if Gemini wraps the JSON anyway
