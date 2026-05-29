@@ -34,17 +34,14 @@ async function analyzeJobDescription(req, res) {
   let rawText;
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.5-flash-lite',
       contents: `Analyze this job description and generate the 5 interview questions:\n\n${jobDescription.trim()}`,
-      config: {
-        systemInstruction: SYSTEM_PROMPT,
-        thinkingConfig: { thinkingBudget: 0 },
-      },
+      config: { systemInstruction: SYSTEM_PROMPT },
     });
     rawText = response.text;
   } catch (err) {
-    console.error('Gemini API error:', err.message, err.status, JSON.stringify(err.errorDetails));
-    return res.status(502).json({ error: 'Failed to contact AI service', detail: err.message });
+    console.error('Gemini API error:', err.message);
+    return res.status(502).json({ error: 'Failed to contact AI service' });
   }
 
   // Strip markdown code fences if Gemini wraps the JSON anyway

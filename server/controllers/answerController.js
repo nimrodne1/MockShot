@@ -61,12 +61,9 @@ async function evaluateAnswer(req, res) {
   let rawText;
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.5-flash-lite',
       contents: userPrompt,
-      config: {
-        systemInstruction: SYSTEM_PROMPT,
-        thinkingConfig: { thinkingBudget: 0 },
-      },
+      config: { systemInstruction: SYSTEM_PROMPT },
     });
     rawText = response.text;
   } catch (err) {
