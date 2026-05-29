@@ -34,7 +34,7 @@ async function analyzeJobDescription(req, res) {
   let rawText;
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-lite',
+      model: 'gemini-2.5-flash',
       contents: `Analyze this job description and generate the 5 interview questions:\n\n${jobDescription.trim()}`,
       config: { systemInstruction: SYSTEM_PROMPT },
     });
